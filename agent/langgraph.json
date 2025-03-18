@@ -1,0 +1,10 @@
+{
+    "graphs": {
+        "agent": "./main.py:graph"
+    },
+    "env": ".env",
+    "dependencies": [
+        "."
+    ],
+    "dockerfile_lines": []
+}
