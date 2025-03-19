@@ -1,0 +1,329 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--background: 35 30% 97%;
+		--foreground: 35 10% 15%;
+
+		--card: 40 35% 98%;
+		--card-foreground: 35 10% 15%;
+
+		--popover: 40 35% 98%;
+		--popover-foreground: 35 10% 15%;
+
+		--primary: 32 95% 50%; /* Retro orange with modern saturation */
+		--primary-foreground: 35 100% 98%;
+
+		--secondary: 190 85% 65%; /* Modern teal */
+		--secondary-foreground: 190 30% 15%;
+
+		--muted: 35 15% 94%;
+		--muted-foreground: 35 10% 40%;
+
+		--accent: 330 75% 65%; /* Modern purple */
+		--accent-foreground: 330 10% 97%;
+
+		--destructive: 0 85% 60%;
+		--destructive-foreground: 0 0% 98%;
+
+		--border: 35 30% 88%;
+		--input: 35 30% 88%;
+		--ring: 32 95% 50%;
+
+		--chart-1: 32 95% 50%;
+		--chart-2: 190 85% 65%;
+		--chart-3: 330 75% 65%;
+		--chart-4: 160 85% 45%;
+		--chart-5: 275 75% 55%;
+
+		--radius: 0.5rem;
+
+		--sidebar-background: 35 40% 95%;
+		--sidebar-foreground: 35 10% 20%;
+		--sidebar-primary: 32 95% 50%;
+		--sidebar-primary-foreground: 35 100% 98%;
+		--sidebar-accent: 35 35% 90%;
+		--sidebar-accent-foreground: 35 10% 20%;
+		--sidebar-border: 35 30% 88%;
+		--sidebar-ring: 32 95% 50%;
+	}
+
+	.dark {
+		--background: 215 20% 15%;
+		--foreground: 210 5% 90%;
+
+		--card: 215 20% 18%;
+		--card-foreground: 210 5% 90%;
+
+		--popover: 215 20% 18%;
+		--popover-foreground: 210 5% 90%;
+
+		--primary: 32 85% 60%; /* Retro orange - modern brightness in dark mode */
+		--primary-foreground: 0 0% 100%;
+
+		--secondary: 190 75% 55%; /* Modern teal */
+		--secondary-foreground: 210 5% 97%;
+
+		--muted: 215 25% 25%;
+		--muted-foreground: 210 5% 70%;
+
+		--accent: 330 65% 55%; /* Modern purple */
+		--accent-foreground: 210 5% 97%;
+
+		--destructive: 0 75% 50%;
+		--destructive-foreground: 0 0% 98%;
+
+		--border: 215 20% 30%;
+		--input: 215 20% 30%;
+		--ring: 32 85% 60%;
+
+		--chart-1: 32 100% 60%;
+		--chart-2: 190 85% 65%;
+		--chart-3: 330 75% 65%;
+		--chart-4: 160 85% 65%;
+		--chart-5: 275 75% 70%;
+
+		--sidebar-background: 215 25% 20%;
+		--sidebar-foreground: 210 5% 90%;
+		--sidebar-primary: 32 85% 60%;
+		--sidebar-primary-foreground: 0 0% 100%;
+		--sidebar-accent: 215 20% 25%;
+		--sidebar-accent-foreground: 210 5% 90%;
+		--sidebar-border: 215 20% 30%;
+		--sidebar-ring: 32 85% 60%;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border outline-ring/50;
+	}
+	body {
+		@apply bg-background text-foreground;
+		background-image: linear-gradient(
+				to right,
+				rgba(128, 128, 128, 0.03) 1px,
+				transparent 1px
+			),
+			linear-gradient(to bottom, rgba(128, 128, 128, 0.03) 1px, transparent 1px);
+		background-size: 20px 20px;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	.retro-heading {
+		font-family: "Chakra Petch", sans-serif;
+		font-weight: 700;
+	}
+	.pixel-font {
+		font-family: "VT323", monospace;
+	}
+	.arcade-font {
+		font-family: "Press Start 2P", monospace;
+		line-height: 1.5;
+	}
+}
+
+/* Retro-Modern Fusion Elements */
+.retro-box {
+	@apply border border-primary/40 rounded-lg shadow-[3px_3px_0px_0px_rgba(0,0,0,0.1)] backdrop-blur-[2px];
+	transition: all 0.2s ease-in-out;
+}
+.retro-box:hover {
+	@apply shadow-[4px_4px_0px_0px_rgba(0,0,0,0.15)];
+}
+
+.retro-button {
+	@apply bg-primary text-primary-foreground font-bold py-2 px-4 border-b-2 border-r-2 border-primary-foreground/20 hover:border-primary-foreground/10 active:border-b-0 active:border-r-0 active:translate-x-1 active:translate-y-1 transition-all rounded-md shadow-none;
+	transition: all 0.15s ease-in-out;
+}
+.retro-button:hover {
+	@apply transform -translate-y-0.5;
+}
+
+.retro-card {
+	@apply bg-card border border-border rounded-lg p-4 shadow-[3px_3px_0px_0px_rgba(0,0,0,0.08)];
+	transition: all 0.2s ease-in-out;
+}
+.retro-card:hover {
+	@apply shadow-[5px_5px_0px_0px_rgba(0,0,0,0.1)] transform -translate-y-0.5;
+}
+
+.retro-input {
+	@apply bg-card border border-border rounded-md p-2 focus:border-primary focus:ring-1 focus:ring-primary transition-colors duration-200;
+}
+
+.scanlines {
+	position: relative;
+}
+
+.scanlines:before {
+	content: "";
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: repeating-linear-gradient(
+		0deg,
+		rgba(0, 0, 0, 0.03),
+		rgba(0, 0, 0, 0.03) 1px,
+		transparent 1px,
+		transparent 2px
+	);
+	z-index: 10;
+	opacity: 0.7;
+}
+
+.crt-screen {
+	position: relative;
+	overflow: hidden;
+	border-radius: 12px;
+}
+
+.crt-screen:before {
+	content: "";
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(
+		ellipse at center,
+		transparent 0%,
+		rgba(0, 0, 0, 0.08) 90%,
+		rgba(0, 0, 0, 0.15) 100%
+	);
+	z-index: 10;
+	opacity: 0.8;
+}
+
+/* Modern glass effect */
+.glass-panel {
+	@apply bg-white/40 backdrop-blur-md border border-white/20 rounded-xl;
+}
+
+/* Modern glow effects */
+.glow-primary {
+	box-shadow: 0 0 15px rgba(var(--primary), 0.3);
+}
+
+.glow-accent {
+	box-shadow: 0 0 15px rgba(var(--accent), 0.3);
+}
+
+/* Pixel elements with modern smoothing */
+.pixel-box {
+	image-rendering: pixelated;
+	@apply transition-transform duration-300;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+/* Animation delay utilities */
+.animation-delay-0 {
+	animation-delay: 0ms;
+}
+
+.animation-delay-100 {
+	animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+	animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+	animation-delay: 300ms;
+}
+
+.animation-delay-400 {
+	animation-delay: 400ms;
+}
+
+.animation-delay-500 {
+	animation-delay: 500ms;
+}
+
+/* Chat message animations */
+@keyframes messageSlideIn {
+	from {
+		opacity: 0;
+		transform: translateY(5px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.message-animation {
+	animation: messageSlideIn 0.25s ease-out forwards;
+}
+
+.assistant-message {
+	position: relative;
+}
+
+.assistant-message::before {
+	content: "";
+	position: absolute;
+	left: -8px;
+	top: 24px;
+	width: 0;
+	height: 0;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+	border-right: 8px solid rgba(255, 255, 255, 0.4);
+}
+
+@keyframes typingIndicator {
+	0%,
+	100% {
+		opacity: 0.4;
+	}
+	50% {
+		opacity: 0.8;
+	}
+}
+
+.typing-indicator span {
+	display: inline-block;
+	width: 5px;
+	height: 5px;
+	background-color: hsl(var(--primary));
+	border-radius: 50%;
+	margin: 0 2px;
+	animation: typingIndicator 1s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+	animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+	animation-delay: 0.4s;
+}
+
+/* Message hover effects */
+.message-hover-effect {
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.message-hover-effect:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
