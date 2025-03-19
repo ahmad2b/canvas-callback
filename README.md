@@ -5,7 +5,7 @@ _👆 Click to watch the Canvas Callback demo on YouTube_
 
 Canvas Callback is an open-source implementation that demonstrates how to transform AI chat interfaces into interactive visual workspaces using LangGraph's interrupt for human-in-the-loop workflows.
 
-**[Try the Demo](https://canvas-callback.vercel.app/n)** | **[Read the Guide](https://canvas-callback.vercel.app/guide)**
+**[Try the Demo](https://canvascallback.vercel.app/n)** | **[Read the Guide](https://canvascallback.vercel.app/guide)**
 
 ## What is Canvas Callback?
 
@@ -57,6 +57,10 @@ The project demonstrates how these patterns work together in a travel planning a
 - **InterruptHandler.tsx**: Routes different interrupt types to specialized UIs
 - **Specific Interrupt Components**: Specialized UIs for different interrupt types
 - **LangGraph SDK**: Communicates with the LangGraph server
+
+## Project Scope
+
+Canvas Callback is designed as a focused, accessible implementation to help you understand and integrate the Canvas UX pattern using LangGraph interrupts. Once you've understand these core concepts, you may want to explore [LangChain's OpenCanvas](https://github.com/langchain-ai/open-canvas) for advanced features like memory systems, custom actions, and artifact versioning.
 
 ## Use Cases
 
@@ -146,13 +150,6 @@ Ready!
 
 6. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-## Implementation Highlights
-
-- **Canvas Component**: Uses a compound component pattern with distinct parts (Root, Header, Content, Footer)
-- **Interrupt Handler**: Type-based routing system for different interrupt types
-- **State Management**: Context provider and hooks system for canvas state
-- **Agent Design**: LangGraph workflow with interrupts for collecting structured information
-
 ## Resources
 
 ### LangGraph Documentation
@@ -173,7 +170,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License
 
 ## Connect
 
