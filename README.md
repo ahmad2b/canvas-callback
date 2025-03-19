@@ -1,6 +1,7 @@
 # Canvas Callback
 
-<video src="canvascallback.mp4" controls title="Canvas Callback Demo" width="600"></video>
+[![Canvas Callback Demo](https://img.youtube.com/vi/589W-9Ojahw/maxresdefault.jpg)](https://www.youtube.com/watch?v=589W-9Ojahw)
+_👆 Click to watch the Canvas Callback demo on YouTube_
 
 Canvas Callback is an open-source implementation that demonstrates how to transform AI chat interfaces into interactive visual workspaces using LangGraph's interrupt for human-in-the-loop workflows.
 
